@@ -1,14 +1,11 @@
-
 const options = {
-  host: '10.25.0.46',
-  port: 3050,
-  database: 'd:/banco/bdcredi.fdb',
-  user: 'SYSDBA',
-  password: 'masterkey',
+  host: '10.25.0.46', //'10.25.0.46'
+  port: process.env.PORT,
+  database: 'D:/banco/bdcredi.fdb', //'D:/banco/bdcredi.fdb'
+  user: process.env.USER,
+  password: process.env.PASSWORD,
   lowercase_keys: false, // set to true to lowercase keys
-  role: null,            // default
-  pageSize: 4096         // default when creating database
+  role: process.env.ROLE,            // default
+  pageSize: process.env.PAGESIZE         // default when creating database
 }
-
-
 module.exports = options

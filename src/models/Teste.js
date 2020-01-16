@@ -8,9 +8,9 @@ class Teste {
       if (err)
         callback(null, err)
       db.query('SELECT * FROM dda_mensagem_campos', function (err, result) {
-        callback(result, null)
-        db.detach();
+        callback(result, err)
       });
+      db.detach();
     });
   }
 }

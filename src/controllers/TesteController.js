@@ -6,7 +6,7 @@ class TesteController {
     try {
      Teste.find((result, erro) => {
        if(erro){
-         res.status(500).send(error)
+         return res.status(500).send(erro)
        }
        res.status(200).send({ teste: result })
       })
