@@ -5,13 +5,15 @@ class ContaCorrenteController {
   async index (req, res) {
     try {
       let conta = new ContaCorrente()
-      await conta.all()
-        .then(result =>{
+      await conta.all((result, erro) =>{
+        res.status(200).send({ resultado: result })
+      })
+        /*.then(result =>{
           res.status(200).send({ resultado: result })
         })
         .catch(erro =>{
           res.status(500).send(erro)
-        })
+        })*/
     } catch (error) {
       res.status(500).send(error)
     }
